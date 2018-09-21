@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css">
+</head>
+
+<body>
+    <section class="hero is-primary is-medium">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                    Login
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container ">
+            <div class="columns ">
+                <div class="column">
+                    <div class="field">
+                        <label class="label">UserName</label>
+                        <input class="input" id="name" type="text" placeholder="">
+                    </div>
+                    <div class="help is-danger" id="help-name"></div>
+                    <div class="field">
+                        <label class="label">Password</label>
+                        <input class="input" id="password" type="password" placeholder="">
+                        <div class="help is-danger" id="help-pass"></div>
+                    </div>
+                    <div class="field">
+                        <label class="label">AutoBot</label>
+                        <input class="input" id="autobot" type="autobot" placeholder="Autobot">
+                        <div class="help is-danger"></div>
+                    </div>
+                    <div class="column">
+                        <a href="forgetpass.html">
+                            <h3>Forget password?</h3>
+                        </a>
+                    </div>
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <a id="click"> <button class="button is-success is-medium is-fullwidth" onclick="check()">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+   <script>
+    var one, two, three, four = false;
+    function check() {
+
+        var name = document.getElementById("name").value;
+        var password = document.getElementById("password").value;
+
+ 
+
+        if (name == "admin" && password == "1234") {
+            document.getElementById("name").classList.remove("is-danger");
+            document.getElementById("password").classList.remove("is-danger");
+            document.getElementById("help-name").innerHTML = "";
+            document.getElementById("help-pass").innerHTML = "";
+            one == true;
+
+        } else if (name === "") {
+            document.getElementById("name").classList.remove("is-danger");
+            document.getElementById("help-name").innerHTML = "Name is Empty";
+        }
+        else if (password === "") {
+            document.getElementById("name").classList.remove("is-danger");
+            document.getElementById("help-pass").innerHTML = "password is Empty";
+        }
+        else {
+            document.getElementById("name").classList.add("is-danger");
+            document.getElementById("password").classList.remove("is-danger");
+            document.getElementById("help-name").innerHTML = "Username or Password is wrong.";
+        }
+        if (name == "admin" && password == "1234") {
+            var a = document.getElementById("click");
+            a.setAttribute("href", "loginS.html");
+        }
+
+
+
+
+
+    }
+
+</script>
+</body>
+
+</html>

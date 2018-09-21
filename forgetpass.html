@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ForgetPassword</title>
+    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css">
+</head>
+
+<body>
+    <section class="hero is-primary is-medium">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                    Login
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container ">
+            <div class="columns ">
+                <div class="column">
+
+
+                    <div class="column">
+                        <label class="label">Confirm E-mail</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input " id="mail" type="email" placeholder="E-mail">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </span>
+                        </div>
+                        <div class="help is-danger" id="hmail"></div>
+                    </div>
+                    <div class="column">
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button class="button is-link" onclick="check()">Confirm</button>
+
+                            </div>
+
+                            <div class="control">
+                                <a id="click"><button class="button is-link" onclick="check()">Back</button>
+                        </div>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script>
+        function check() {
+            var email = document.getElementById("mail");
+            var con = email.value.includes(".com", 0);
+            // var mail = document.getElementById("mail").value;
+
+            // if (con === false) {
+            //     document.getElementById("mail").classList.add("is-danger");
+            //     document.getElementById("hmail").innerHTML = "This is not Email";
+            // } else {
+            //     document.getElementById("mail").classList.remove("is-danger");
+            //     document.getElementById("hmail").innerHTML = "";
+            // }
+
+            if (con) {
+                document.getElementById("mail").classList.remove("is-danger");
+                document.getElementById("hmail").innerHTML = "The password was sent to the password";
+
+            } else if (con === "") {
+                document.getElementById("mail").classList.remove("is-danger");
+                document.getElementById("hmail").innerHTML = "error";
+            }
+            else {
+                document.getElementById("mail").classList.add("is-danger");
+                document.getElementById("hmail").innerHTML = "error";
+            }
+            if (con) {
+                var a = document.getElementById("click");
+                a.setAttribute("href", "index.html");
+            } else {
+
+            }
+
+
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>
